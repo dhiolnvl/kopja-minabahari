@@ -140,6 +140,105 @@ export interface Database {
           updated_at?: string
         }
       }
+      admin_users: {
+        Row: {
+          id: string
+          email: string
+          full_name: string | null
+          role: string
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          email: string
+          full_name?: string | null
+          role?: string
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          full_name?: string | null
+          role?: string
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      certificates: {
+        Row: {
+          id: string
+          title: string
+          issuer: string
+          issue_date: string | null
+          description: string | null
+          image: string | null
+          certificate_number: string | null
+          is_active: boolean
+          sort_order: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          issuer: string
+          issue_date?: string | null
+          description?: string | null
+          image?: string | null
+          certificate_number?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          issuer?: string
+          issue_date?: string | null
+          description?: string | null
+          image?: string | null
+          certificate_number?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      gallery: {
+        Row: {
+          id: string
+          title: string
+          description: string | null
+          image: string
+          category: string | null
+          is_active: boolean
+          sort_order: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          description?: string | null
+          image: string
+          category?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string | null
+          image?: string
+          category?: string | null
+          is_active?: boolean
+          sort_order?: number
+          created_at?: string
+        }
+      }
     }
   }
 }
@@ -148,3 +247,6 @@ export type ContactMessage = Database['public']['Tables']['contact_messages']['R
 export type Service = Database['public']['Tables']['services']['Row']
 export type CompanyStat = Database['public']['Tables']['company_stats']['Row']
 export type News = Database['public']['Tables']['news']['Row']
+export type AdminUser = Database['public']['Tables']['admin_users']['Row']
+export type Certificate = Database['public']['Tables']['certificates']['Row']
+export type Gallery = Database['public']['Tables']['gallery']['Row']
