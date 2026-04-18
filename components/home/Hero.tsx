@@ -1,33 +1,105 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
+
+const slides = [
+  {
+    image: '/gambar/Penyortiran.jpg',
+    title: 'Solusi Cold Storage',
+    highlight: 'Terpercaya',
+    subtitle: 'di Pekalongan',
+    description: 'Fasilitas penyimpanan dan pembekuan ikan berstandar tinggi dengan armada distribusi berpendingin untuk menjaga kualitas produk perikanan Anda.',
+  },
+  {
+    image: '/gambar/Ruang Proses Gudang 100ton.jpg',
+    title: 'Kapasitas',
+    highlight: '100 Ton',
+    subtitle: 'Cold Storage',
+    description: 'Gudang penyimpanan berkapasitas besar dengan sistem pendingin modern dan monitoring suhu 24 jam untuk menjaga kesegaran ikan Anda.',
+  },
+  {
+    image: '/gambar/Ruang Proses Gudang 30 Ton.jpg',
+    title: 'Teknologi',
+    highlight: 'Modern',
+    subtitle: 'Blast Freezing',
+    description: 'Proses pembekuan cepat dengan standar internasional untuk mempertahankan kualitas, tekstur, dan nilai gizi produk perikanan.',
+  },
+  {
+    image: '/gambar/Bahan Baku.jpg',
+    title: 'Kualitas',
+    highlight: 'Terjamin',
+    subtitle: 'Ikan Segar',
+    description: 'Proses penanganan ikan segar dengan standar mutu tinggi dari bahan baku hingga penyimpanan untuk hasil terbaik.',
+  },
+]
 
 export default function Hero() {
-  return (
-    <section className="relative bg-gradient-to-br from-primary via-primary-dark to-ocean min-h-[600px] flex items-center">
-      {/* Wave Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 1440 320">
-          <path
-            fill="currentColor"
-            fillOpacity="1"
-            d="M0,96L48,112C96,128,192,160,288,154.7C384,149,480,107,576,90.7C672,75,768,85,864,106.7C960,128,1056,160,1152,154.7C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }
+
+  return (
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40"></div>
+          </div>
+        </div>
+      ))}
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 z-10">
+        <div className="max-w-3xl">
           <div className="text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Solusi Cold Storage{' '}
-              <span className="text-accent">Terpercaya</span> di Pekalongan
-            </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
-              Fasilitas penyimpanan dan pembekuan ikan berstandar tinggi dengan
-              armada distribusi berpendingin untuk menjaga kualitas produk
-              perikanan Anda.
-            </p>
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-500 ${
+                  index === currentSlide
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-4 absolute'
+                }`}
+              >
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  {slide.title}{' '}
+                  <span className="text-accent">{slide.highlight}</span>{' '}
+                  {slide.subtitle}
+                </h1>
+                <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl">
+                  {slide.description}
+                </p>
+              </div>
+            ))}
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -45,42 +117,68 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Quick Contact */}
-            <div className="mt-8 flex items-center space-x-2 text-gray-200">
-              <Phone size={20} />
-              <span className="text-sm">Hotline:</span>
-              <a
-                href="tel:+6281234567890"
-                className="text-accent hover:text-accent-dark font-semibold"
-              >
-                +62 812-3456-7890
-              </a>
+            {/* Tagline */}
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <p className="text-accent font-semibold text-sm md:text-base italic">
+                "Membangun Ekonomi Kerakyatan di Masyarakat Pesisir Pantai Kota Pekalongan"
+              </p>
             </div>
-          </div>
 
-          {/* Image/Illustration Placeholder */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-                <div className="aspect-square bg-gradient-to-br from-accent/20 to-ocean/20 rounded-xl flex items-center justify-center">
-                  <svg
-                    className="w-64 h-64 text-white/80"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
+            {/* Quick Contact */}
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 text-gray-200">
+              <div className="flex items-center space-x-2">
+                <Phone size={20} />
+                <span className="text-sm">Hotline:</span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                <a
+                  href="tel:+6281565675877"
+                  className="text-accent hover:text-accent-dark font-semibold"
+                >
+                  0815-6567-587 <span className="text-xs">(Ketua)</span>
+                </a>
+                <a
+                  href="tel:+6281568471106"
+                  className="text-accent hover:text-accent-dark font-semibold"
+                >
+                  0815-6847-1106 <span className="text-xs">(GM)</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-colors pointer-events-auto"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-colors pointer-events-auto"
+        aria-label="Next slide"
+      >
+        <ChevronRight size={24} />
+      </button>
+
+      {/* Dots Navigation */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3 pointer-events-auto">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide
+                ? 'bg-accent w-8'
+                : 'bg-white/50 hover:bg-white/80'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </section>
   )

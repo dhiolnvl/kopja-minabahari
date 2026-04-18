@@ -23,11 +23,11 @@ export default function ContactCTA() {
               Kirim Pesan
             </Link>
             <a
-              href="tel:+6281234567890"
+              href="tel:+6281565675877"
               className="inline-flex items-center bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
             >
               <Phone className="mr-2" size={20} />
-              +62 812-3456-7890
+              0815-6567-587
             </a>
           </div>
 

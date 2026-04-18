@@ -90,6 +90,29 @@ export default async function SewaThermoKingPage() {
                 ))}
               </div>
 
+              {/* Gallery Images */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-primary mb-6">
+                  Peralatan & Fasilitas
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Peralatan Proses.jpg"
+                      alt="Peralatan Proses"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/penyusunan di troli.jpg"
+                      alt="Penyusunan di Troli"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-light rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   Mengapa Memilih Armada Kami?

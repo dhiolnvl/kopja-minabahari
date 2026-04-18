@@ -31,6 +31,9 @@ export default function WhyUs() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Mengapa Memilih Kami?
           </h2>
+          <p className="text-accent text-base md:text-lg italic font-semibold mb-3">
+            "Membangun Ekonomi Kerakyatan di Masyarakat Pesisir Pantai Kota Pekalongan"
+          </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Komitmen kami adalah menjaga kualitas produk perikanan Anda dengan
             layanan terbaik.

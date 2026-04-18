@@ -90,6 +90,43 @@ export default async function PembekuanIkanPage() {
                 ))}
               </div>
 
+              {/* Gallery Images */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-primary mb-6">
+                  Proses Pembekuan Ikan
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Bahan Baku.jpg"
+                      alt="Bahan Baku Ikan Segar"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Sortir.jpg"
+                      alt="Sortir Ikan"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Penimbangan.jpg"
+                      alt="Penimbangan"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Pengepakan.jpg"
+                      alt="Pengepakan"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-light rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   Mengapa Memilih Layanan Pembekuan Kami?

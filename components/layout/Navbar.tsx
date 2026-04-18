@@ -19,15 +19,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">SMB</span>
-            </div>
+          <Link href="/" className="flex items-center space-x-3">
+            <img
+              src="/gambar/logo.jpeg"
+              alt="Logo Koperasi Sukses Mina Bahari"
+              className="h-12 w-auto object-contain"
+            />
             <div className="hidden sm:block">
-              <div className="text-primary font-bold text-lg leading-tight">
-                Sukses Mina Bahari
+              <div className="text-primary font-bold text-base leading-tight">
+                Koperasi Jasa Sukses Mina Bahari
               </div>
-              <div className="text-xs text-gray-600">Koperasi Pekalongan</div>
+              <div className="text-xs text-gray-600">Kota Pekalongan</div>
             </div>
           </Link>
 

@@ -90,6 +90,29 @@ export default async function ColdStoragePage() {
                 ))}
               </div>
 
+              {/* Gallery Images */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-primary mb-6">
+                  Fasilitas Cold Storage
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Ruang Proses Gudang 100ton.jpg"
+                      alt="Ruang Proses Gudang 100 Ton"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md">
+                    <img
+                      src="/gambar/Ruang Proses Gudang 30 Ton.jpg"
+                      alt="Ruang Proses Gudang 30 Ton"
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-light rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   Mengapa Memilih Cold Storage Kami?

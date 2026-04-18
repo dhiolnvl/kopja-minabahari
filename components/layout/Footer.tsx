@@ -1,22 +1,22 @@
-import Link from 'next/link'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import Link from "next/link";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const footerLinks = {
   navigasi: [
-    { href: '/', label: 'Beranda' },
-    { href: '/tentang-kami', label: 'Tentang Kami' },
-    { href: '/layanan', label: 'Layanan' },
-    { href: '/kontak', label: 'Kontak' },
+    { href: "/", label: "Beranda" },
+    { href: "/tentang-kami", label: "Tentang Kami" },
+    { href: "/layanan", label: "Layanan" },
+    { href: "/kontak", label: "Kontak" },
   ],
   layanan: [
-    { href: '/layanan/cold-storage', label: 'Cold Storage' },
-    { href: '/layanan/pembekuan-ikan', label: 'Pembekuan Ikan' },
-    { href: '/layanan/sewa-thermoking', label: 'Sewa Thermoking' },
+    { href: "/layanan/cold-storage", label: "Cold Storage" },
+    { href: "/layanan/pembekuan-ikan", label: "Pembekuan Ikan" },
+    { href: "/layanan/sewa-thermoking", label: "Sewa Thermoking" },
   ],
-}
+};
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-primary text-white">
@@ -24,9 +24,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Sukses Mina Bahari</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <img
+                src="/gambar/logo.jpeg"
+                alt="Logo Koperasi Sukses Mina Bahari"
+                className="h-12 w-auto object-contain bg-white rounded-lg p-1"
+              />
+            </div>
+            <h3 className="text-xl font-bold mb-4">
+              Koperasi Jasa Sukses Mina Bahari
+            </h3>
+
             <p className="text-gray-300 text-sm mb-4">
-              Koperasi terpercaya di Pekalongan untuk solusi cold storage,
+              Koperasi terpercaya di Kota Pekalongan untuk solusi cold storage,
               pembekuan ikan, dan distribusi berpendingin.
             </p>
           </div>
@@ -71,18 +81,32 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-start space-x-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>Pekalongan, Jawa Tengah, Indonesia</span>
+                <span>Jl. Pantai Sari No. 13, Pekalongan, Jawa Tengah</span>
               </li>
-              <li className="flex items-center space-x-2">
-                <Phone size={16} className="flex-shrink-0" />
-                <a href="tel:+6281234567890" className="hover:text-accent">
-                  +62 812-3456-7890
-                </a>
+              <li className="flex items-start space-x-2">
+                <Phone size={16} className="mt-1 flex-shrink-0" />
+                <div>
+                  <div className="mb-1">
+                    <a href="tel:+6281565675877" className="hover:text-accent">
+                      0815-6567-587
+                    </a>
+                    <span className="text-xs ml-2">(Ketua)</span>
+                  </div>
+                  <div>
+                    <a href="tel:+6281568471106" className="hover:text-accent">
+                      0815-6847-1106
+                    </a>
+                    <span className="text-xs ml-2">(GM)</span>
+                  </div>
+                </div>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={16} className="flex-shrink-0" />
-                <a href="mailto:info@suksesminabahari.com" className="hover:text-accent">
-                  info@suksesminabahari.com
+                <a
+                  href="mailto:kopjasa.suksesminabaharipkl@gmail.com"
+                  className="hover:text-accent break-all"
+                >
+                  kopjasa.suksesminabaharipkl@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
@@ -96,10 +120,11 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
           <p>
-            &copy; {currentYear} Koperasi Sukses Mina Bahari. All rights reserved.
+            &copy; {currentYear} Koperasi Sukses Mina Bahari. All rights
+            reserved.
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

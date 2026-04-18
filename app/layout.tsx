@@ -20,24 +20,24 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Koperasi Sukses Mina Bahari - Cold Storage Pekalongan",
-    template: "%s | Koperasi Sukses Mina Bahari"
+    default: "Koperasi Jasa Sukses Mina Bahari - Cold Storage Kota Pekalongan",
+    template: "%s | Koperasi Jasa Sukses Mina Bahari"
   },
-  description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Pekalongan. Solusi penyimpanan dan distribusi produk perikanan dengan teknologi modern.",
-  keywords: ["cold storage pekalongan", "pembekuan ikan pekalongan", "sewa thermoking pekalongan", "koperasi perikanan pekalongan", "cold storage jawa tengah"],
-  authors: [{ name: "Koperasi Sukses Mina Bahari" }],
+  description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan. Membangun ekonomi kerakyatan di masyarakat pesisir pantai dengan solusi penyimpanan dan distribusi produk perikanan berteknologi modern.",
+  keywords: ["cold storage pekalongan", "pembekuan ikan pekalongan", "sewa thermoking pekalongan", "koperasi perikanan pekalongan", "cold storage jawa tengah", "koperasi jasa sukses mina bahari"],
+  authors: [{ name: "Koperasi Jasa Sukses Mina Bahari" }],
   openGraph: {
     type: "website",
     locale: "id_ID",
     url: siteUrl,
-    siteName: "Koperasi Sukses Mina Bahari",
-    title: "Koperasi Sukses Mina Bahari - Cold Storage Pekalongan",
-    description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Pekalongan.",
+    siteName: "Koperasi Jasa Sukses Mina Bahari",
+    title: "Koperasi Jasa Sukses Mina Bahari - Cold Storage Kota Pekalongan",
+    description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Koperasi Sukses Mina Bahari - Cold Storage Pekalongan",
-    description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Pekalongan.",
+    title: "Koperasi Jasa Sukses Mina Bahari - Cold Storage Kota Pekalongan",
+    description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan.",
   },
   robots: {
     index: true,

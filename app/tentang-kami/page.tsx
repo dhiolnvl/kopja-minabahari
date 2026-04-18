@@ -7,7 +7,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.
 export const metadata: Metadata = {
   title: 'Tentang Kami',
   description:
-    'Koperasi Sukses Mina Bahari adalah koperasi perikanan terpercaya di Pekalongan yang telah berpengalaman lebih dari 10 tahun dalam bidang cold storage dan distribusi perikanan.',
+    'Koperasi Jasa Sukses Mina Bahari adalah koperasi perikanan terpercaya di Kota Pekalongan yang telah berpengalaman lebih dari 10 tahun dalam bidang cold storage dan distribusi perikanan.',
   alternates: {
     canonical: `${siteUrl}/tentang-kami`,
   },
@@ -28,9 +28,12 @@ export default function TentangKami() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Kami</h1>
+            <p className="text-accent text-lg italic font-semibold mb-4">
+              "Membangun Ekonomi Kerakyatan di Masyarakat Pesisir Pantai Kota Pekalongan"
+            </p>
             <p className="text-xl text-gray-200">
-              Koperasi Sukses Mina Bahari adalah mitra terpercaya untuk solusi
-              penyimpanan dan distribusi produk perikanan di Pekalongan, Jawa
+              Koperasi Jasa Sukses Mina Bahari adalah mitra terpercaya untuk solusi
+              penyimpanan dan distribusi produk perikanan di Kota Pekalongan, Jawa
               Tengah.
             </p>
           </div>
@@ -47,8 +50,8 @@ export default function TentangKami() {
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
                 <p>
-                  Koperasi Sukses Mina Bahari didirikan pada tahun 2014 dengan
-                  visi untuk mendukung industri perikanan di Pekalongan. Berawal
+                  Koperasi Jasa Sukses Mina Bahari didirikan pada tahun 2014 dengan
+                  visi untuk mendukung industri perikanan di Kota Pekalongan. Berawal
                   dari kebutuhan para nelayan dan pengusaha perikanan akan
                   fasilitas penyimpanan berpendingin yang berkualitas.
                 </p>
@@ -64,8 +67,12 @@ export default function TentangKami() {
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-accent/10 to-ocean/10 rounded-2xl p-8 aspect-square flex items-center justify-center">
-              <Award className="w-48 h-48 text-primary/30" />
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src="/gambar/Gedung Tampa Depan.jpg"
+                alt="Gedung Koperasi Sukses Mina Bahari"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

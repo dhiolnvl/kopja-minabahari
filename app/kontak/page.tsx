@@ -8,7 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.
 export const metadata: Metadata = {
   title: 'Hubungi Kami',
   description:
-    'Hubungi Koperasi Sukses Mina Bahari untuk konsultasi dan informasi lebih lanjut tentang layanan cold storage, pembekuan ikan, dan sewa thermoking di Pekalongan.',
+    'Hubungi Koperasi Jasa Sukses Mina Bahari untuk konsultasi dan informasi lebih lanjut tentang layanan cold storage, pembekuan ikan, dan sewa thermoking di Kota Pekalongan.',
   alternates: {
     canonical: `${siteUrl}/kontak`,
   },
@@ -56,6 +56,8 @@ export default function KontakPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Alamat</h3>
                     <p className="text-gray-600">
+                      Jl. Pantai Sari No. 13
+                      <br />
                       Pekalongan, Jawa Tengah
                       <br />
                       Indonesia
@@ -69,12 +71,26 @@ export default function KontakPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Telepon</h3>
-                    <a
-                      href="tel:+6281234567890"
-                      className="text-primary hover:text-accent"
-                    >
-                      +62 812-3456-7890
-                    </a>
+                    <div className="space-y-1">
+                      <div>
+                        <a
+                          href="tel:+6281565675877"
+                          className="text-primary hover:text-accent"
+                        >
+                          0815-6567-587
+                        </a>
+                        <span className="text-sm text-gray-500 ml-2">(Ketua - Pak Kisyono)</span>
+                      </div>
+                      <div>
+                        <a
+                          href="tel:+6281568471106"
+                          className="text-primary hover:text-accent"
+                        >
+                          0815-6847-1106
+                        </a>
+                        <span className="text-sm text-gray-500 ml-2">(GM - Pak Sukamto)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -85,10 +101,10 @@ export default function KontakPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <a
-                      href="mailto:info@suksesminabahari.com"
-                      className="text-primary hover:text-accent"
+                      href="mailto:kopjasa.suksesminabaharipkl@gmail.com"
+                      className="text-primary hover:text-accent break-all"
                     >
-                      info@suksesminabahari.com
+                      kopjasa.suksesminabaharipkl@gmail.com
                     </a>
                   </div>
                 </div>
