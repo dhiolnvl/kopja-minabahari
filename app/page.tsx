@@ -1,6 +1,7 @@
 import Hero from '@/components/home/Hero'
 import Services from '@/components/home/Services'
 import WhyUs from '@/components/home/WhyUs'
+import Certificates from '@/components/home/Certificates'
 import Gallery from '@/components/home/Gallery'
 import ContactCTA from '@/components/home/ContactCTA'
 import { LocalBusinessJsonLd } from '@/components/seo/JsonLd'
@@ -37,6 +38,7 @@ export default function Home() {
       <Hero />
       <Services />
       <WhyUs />
+      <Certificates />
       <Gallery />
       <ContactCTA />
     </>
