@@ -77,3 +77,42 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
     />
   )
 }
+
+interface ArticleSchema {
+  title: string
+  description: string
+  image: string
+  datePublished: string
+  dateModified: string
+  author: string
+}
+
+export function ArticleJsonLd({
+  title,
+  description,
+  image,
+  datePublished,
+  dateModified,
+  author,
+}: ArticleSchema) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image,
+    datePublished,
+    dateModified,
+    author: {
+      '@type': 'Person',
+      name: author,
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}

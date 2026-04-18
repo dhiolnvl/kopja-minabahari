@@ -99,6 +99,47 @@ export interface Database {
           sort_order?: number
         }
       }
+      news: {
+        Row: {
+          id: string
+          slug: string
+          title: string
+          excerpt: string | null
+          content: string
+          image: string | null
+          author: string
+          published_at: string
+          is_published: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          title: string
+          excerpt?: string | null
+          content: string
+          image?: string | null
+          author?: string
+          published_at?: string
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title?: string
+          excerpt?: string | null
+          content?: string
+          image?: string | null
+          author?: string
+          published_at?: string
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+      }
     }
   }
 }
@@ -106,3 +147,4 @@ export interface Database {
 export type ContactMessage = Database['public']['Tables']['contact_messages']['Row']
 export type Service = Database['public']['Tables']['services']['Row']
 export type CompanyStat = Database['public']['Tables']['company_stats']['Row']
+export type News = Database['public']['Tables']['news']['Row']

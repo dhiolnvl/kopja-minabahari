@@ -3,6 +3,7 @@ import Services from '@/components/home/Services'
 import WhyUs from '@/components/home/WhyUs'
 import Certificates from '@/components/home/Certificates'
 import Gallery from '@/components/home/Gallery'
+import News from '@/components/home/News'
 import ContactCTA from '@/components/home/ContactCTA'
 import { LocalBusinessJsonLd } from '@/components/seo/JsonLd'
 import type { Metadata } from 'next'
@@ -40,6 +41,7 @@ export default function Home() {
       <WhyUs />
       <Certificates />
       <Gallery />
+      <News />
       <ContactCTA />
     </>
   )
