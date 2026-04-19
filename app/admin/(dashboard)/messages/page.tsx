@@ -1,11 +1,12 @@
 import { createClient } from '@/lib/supabase/server'
+import type { ContactMessage } from '@/lib/supabase/types'
 import { Mail, MailOpen } from 'lucide-react'
 import MessageRow from './MessageRow'
 
 export default async function AdminMessagesPage() {
   const supabase = await createClient()
 
-  const { data: messages } = await supabase
+  const { data: messages }: { data: ContactMessage[] | null } = await supabase
     .from('contact_messages')
     .select('*')
     .order('created_at', { ascending: false })
