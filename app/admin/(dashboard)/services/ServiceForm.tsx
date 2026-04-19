@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import type { Service } from '@/lib/supabase/types'
+import type { Service, Database } from '@/lib/supabase/types'
 import { ArrowLeft, Save, Plus, X } from 'lucide-react'
 import Link from 'next/link'
 
@@ -18,7 +18,7 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
 
   // Parse features dari JSON atau gunakan array kosong
   const initialFeatures =
-    service?.features && Array.isArray(service.features) ? service.features : []
+    service?.features && Array.isArray(service.features) ? (service.features as string[]) : []
 
   const [formData, setFormData] = useState({
     slug: service?.slug || '',
@@ -29,7 +29,7 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
     is_active: service?.is_active ?? true,
   })
 
-  const [features, setFeatures] = useState<string[]>(initialFeatures)
+  const [features, setFeatures] = useState<string[]>(initialFeatures as string[])
   const [newFeature, setNewFeature] = useState('')
 
   const generateSlug = (title: string) => {
@@ -67,13 +67,18 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
     try {
       const supabase = createClient()
 
-      const dataToSave = {
-        ...formData,
-        features: features,
-      }
-
       if (mode === 'create') {
-        const { error } = await supabase.from('services').insert(dataToSave)
+        const insertData: Database['public']['Tables']['services']['Insert'] = {
+          slug: formData.slug,
+          title: formData.title,
+          description: formData.description || null,
+          icon: formData.icon || null,
+          features: features,
+          price_info: formData.price_info || null,
+          is_active: formData.is_active,
+        }
+
+        const { error } = await supabase.from('services').insert(insertData as any)
 
         if (error) {
           alert('Gagal menambah layanan: ' + error.message)
@@ -81,9 +86,19 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
           return
         }
       } else {
+        const updateData: Database['public']['Tables']['services']['Update'] = {
+          slug: formData.slug,
+          title: formData.title,
+          description: formData.description || null,
+          icon: formData.icon || null,
+          features: features,
+          price_info: formData.price_info || null,
+          is_active: formData.is_active,
+        }
+
         const { error } = await supabase
           .from('services')
-          .update(dataToSave)
+          .update(updateData as any)
           .eq('id', service!.id)
 
         if (error) {

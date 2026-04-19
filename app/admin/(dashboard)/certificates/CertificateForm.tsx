@@ -34,8 +34,7 @@ export default function CertificateForm({ certificate, mode }: CertificateFormPr
       const supabase = createClient()
 
       if (mode === 'create') {
-        // @ts-ignore - Supabase type inference issue
-        const { error } = await supabase.from('certificates').insert({
+        const insertData: Database['public']['Tables']['certificates']['Insert'] = {
           title: formData.title,
           issuer: formData.issuer,
           issue_date: formData.issue_date || null,
@@ -44,7 +43,9 @@ export default function CertificateForm({ certificate, mode }: CertificateFormPr
           certificate_number: formData.certificate_number || null,
           is_active: formData.is_active,
           sort_order: formData.sort_order,
-        })
+        }
+
+        const { error } = await supabase.from('certificates').insert(insertData as any)
 
         if (error) {
           alert('Gagal menambah sertifikat: ' + error.message)
@@ -52,20 +53,21 @@ export default function CertificateForm({ certificate, mode }: CertificateFormPr
           return
         }
       } else {
+        const updateData: Database['public']['Tables']['certificates']['Update'] = {
+          title: formData.title,
+          issuer: formData.issuer,
+          issue_date: formData.issue_date || null,
+          description: formData.description || null,
+          image: formData.image || null,
+          certificate_number: formData.certificate_number || null,
+          is_active: formData.is_active,
+          sort_order: formData.sort_order,
+          updated_at: new Date().toISOString(),
+        }
+
         const { error } = await supabase
           .from('certificates')
-          // @ts-ignore - Supabase type inference issue
-          .update({
-            title: formData.title,
-            issuer: formData.issuer,
-            issue_date: formData.issue_date || null,
-            description: formData.description || null,
-            image: formData.image || null,
-            certificate_number: formData.certificate_number || null,
-            is_active: formData.is_active,
-            sort_order: formData.sort_order,
-            updated_at: new Date().toISOString(),
-          })
+          .update(updateData as any)
           .eq('id', certificate!.id)
 
         if (error) {

@@ -50,10 +50,18 @@ export default function NewsForm({ news, mode }: NewsFormProps) {
       const supabase = createClient()
 
       if (mode === 'create') {
-        const { error } = await supabase.from('news').insert({
-          ...formData,
+        const insertData: Database['public']['Tables']['news']['Insert'] = {
+          slug: formData.slug,
+          title: formData.title,
+          excerpt: formData.excerpt || null,
+          content: formData.content,
+          image: formData.image || null,
+          author: formData.author,
+          is_published: formData.is_published,
           published_at: new Date().toISOString(),
-        } as Database['public']['Tables']['news']['Insert'])
+        }
+
+        const { error } = await supabase.from('news').insert(insertData as any)
 
         if (error) {
           alert('Gagal menambah berita: ' + error.message)
@@ -61,12 +69,20 @@ export default function NewsForm({ news, mode }: NewsFormProps) {
           return
         }
       } else {
+        const updateData: Database['public']['Tables']['news']['Update'] = {
+          slug: formData.slug,
+          title: formData.title,
+          excerpt: formData.excerpt || null,
+          content: formData.content,
+          image: formData.image || null,
+          author: formData.author,
+          is_published: formData.is_published,
+          updated_at: new Date().toISOString(),
+        }
+
         const { error } = await supabase
           .from('news')
-          .update({
-            ...formData,
-            updated_at: new Date().toISOString(),
-          } as Database['public']['Tables']['news']['Update'])
+          .update(updateData as any)
           .eq('id', news!.id)
 
         if (error) {

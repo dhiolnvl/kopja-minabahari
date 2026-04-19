@@ -39,15 +39,16 @@ export default function GalleryForm({ gallery, mode }: GalleryFormProps) {
       const supabase = createClient()
 
       if (mode === 'create') {
-        // @ts-ignore - Supabase type inference issue
-        const { error } = await supabase.from('gallery').insert({
+        const insertData: Database['public']['Tables']['gallery']['Insert'] = {
           title: formData.title,
           description: formData.description || null,
           image: formData.image,
           category: formData.category || null,
           is_active: formData.is_active,
           sort_order: formData.sort_order,
-        })
+        }
+
+        const { error } = await supabase.from('gallery').insert(insertData as any)
 
         if (error) {
           alert('Gagal menambah foto: ' + error.message)
@@ -55,16 +56,18 @@ export default function GalleryForm({ gallery, mode }: GalleryFormProps) {
           return
         }
       } else {
-        const { error } = await supabase.from('gallery')
-          // @ts-ignore - Supabase type inference issue
-          .update({
+        const updateData: Database['public']['Tables']['gallery']['Update'] = {
           title: formData.title,
           description: formData.description || null,
           image: formData.image,
           category: formData.category || null,
           is_active: formData.is_active,
           sort_order: formData.sort_order,
-        }).eq('id', gallery!.id)
+        }
+
+        const { error } = await supabase.from('gallery')
+          .update(updateData as any)
+          .eq('id', gallery!.id)
 
         if (error) {
           alert('Gagal mengupdate foto: ' + error.message)

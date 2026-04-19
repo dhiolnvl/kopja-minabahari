@@ -27,8 +27,7 @@ export default function MessageRow({ message }: { message: ContactMessage }) {
     const supabase = createClient()
     await supabase
       .from('contact_messages')
-      // @ts-ignore - Supabase type inference issue
-      .update({ is_read: !message.is_read })
+      .update({ is_read: !message.is_read } as any)
       .eq('id', message.id)
 
     router.refresh()
@@ -43,8 +42,8 @@ export default function MessageRow({ message }: { message: ContactMessage }) {
     setLoading(true)
     const supabase = createClient()
     await supabase.from('contact_messages')
-      // @ts-ignore - Supabase type inference issue
-      .delete().eq('id', message.id)
+      .delete()
+      .eq('id', message.id)
 
     router.refresh()
   }
@@ -54,8 +53,8 @@ export default function MessageRow({ message }: { message: ContactMessage }) {
       // Mark as read when opening
       const supabase = createClient()
       await supabase.from('contact_messages')
-        // @ts-ignore - Supabase type inference issue
-        .update({ is_read: true }).eq('id', message.id)
+        .update({ is_read: true } as any)
+        .eq('id', message.id)
       router.refresh()
     }
     setExpanded(!expanded)
