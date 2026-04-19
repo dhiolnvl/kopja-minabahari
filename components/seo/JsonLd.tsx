@@ -1,3 +1,58 @@
+interface OrganizationSchema {
+  name: string
+  description: string
+  url: string
+  logo: string
+  address: {
+    streetAddress?: string
+    addressLocality: string
+    addressRegion: string
+    postalCode?: string
+    addressCountry: string
+  }
+  telephone?: string
+  email?: string
+  sameAs?: string[]
+}
+
+export function OrganizationJsonLd({
+  name,
+  description,
+  url,
+  logo,
+  address,
+  telephone,
+  email,
+  sameAs = [],
+}: OrganizationSchema) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name,
+    description,
+    url,
+    logo,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry,
+    },
+    telephone,
+    email,
+    sameAs,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 interface LocalBusinessSchema {
   name: string
   description: string
@@ -107,6 +162,85 @@ export function ArticleJsonLd({
       '@type': 'Person',
       name: author,
     },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+interface ServiceSchema {
+  name: string
+  description: string
+  provider: string
+  areaServed: string
+  url?: string
+}
+
+export function ServiceJsonLd({
+  name,
+  description,
+  provider,
+  areaServed,
+  url,
+}: ServiceSchema) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: provider,
+    },
+    areaServed: {
+      '@type': 'City',
+      name: areaServed,
+    },
+    url,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+interface WebSiteSchema {
+  name: string
+  url: string
+  description?: string
+  potentialAction?: {
+    target: string
+    queryInput: string
+  }
+}
+
+export function WebSiteJsonLd({
+  name,
+  url,
+  description,
+  potentialAction,
+}: WebSiteSchema) {
+  const schema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name,
+    url,
+    description,
+  }
+
+  if (potentialAction) {
+    schema.potentialAction = {
+      '@type': 'SearchAction',
+      target: potentialAction.target,
+      'query-input': potentialAction.queryInput,
+    }
   }
 
   return (

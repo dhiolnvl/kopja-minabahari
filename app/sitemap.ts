@@ -20,6 +20,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     })) || []
 
+  // Get all published news articles
+  const { data: news } = (await supabase
+    .from('news')
+    .select('slug, published_at, updated_at')
+    .eq('is_published', true)) as { data: { slug: string; published_at: string; updated_at: string }[] | null }
+
+  const newsUrls =
+    news?.map((article) => ({
+      url: `${siteUrl}/berita/${article.slug}`,
+      lastModified: new Date(article.updated_at || article.published_at),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })) || []
+
   return [
     {
       url: siteUrl,
@@ -40,6 +54,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     ...serviceUrls,
+    {
+      url: `${siteUrl}/berita`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.7,
+    },
+    ...newsUrls,
     {
       url: `${siteUrl}/kontak`,
       lastModified: new Date(),

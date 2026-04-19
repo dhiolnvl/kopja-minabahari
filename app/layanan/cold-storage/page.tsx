@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { Check, Phone } from 'lucide-react'
 import Link from 'next/link'
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd'
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd'
 import type { Service } from '@/lib/supabase/types'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.com'
@@ -29,6 +29,20 @@ export async function generateMetadata(): Promise<Metadata> {
     description: service.description || '',
     alternates: {
       canonical: `${siteUrl}/layanan/${slug}`,
+    },
+    openGraph: {
+      title: service.title,
+      description: service.description || '',
+      type: 'website',
+      url: `${siteUrl}/layanan/${slug}`,
+      images: [
+        {
+          url: `${siteUrl}/gambar/Ruang Proses Gudang 100ton.jpg`,
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
     },
   }
 }
@@ -57,6 +71,13 @@ export default async function ColdStoragePage() {
           { name: 'Layanan', url: `${siteUrl}/layanan` },
           { name: service.title, url: `${siteUrl}/layanan/${slug}` },
         ]}
+      />
+      <ServiceJsonLd
+        name={service.title}
+        description={service.description || ''}
+        provider="Koperasi Jasa Sukses Mina Bahari"
+        areaServed="Kota Pekalongan"
+        url={`${siteUrl}/layanan/${slug}`}
       />
 
       {/* Hero Section */}

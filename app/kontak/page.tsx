@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/kontak`,
   },
+  openGraph: {
+    title: 'Hubungi Kami - Koperasi Jasa Sukses Mina Bahari',
+    description:
+      'Hubungi Koperasi Jasa Sukses Mina Bahari untuk konsultasi dan informasi lebih lanjut tentang layanan cold storage, pembekuan ikan, dan sewa thermoking di Kota Pekalongan.',
+    type: 'website',
+    url: `${siteUrl}/kontak`,
+    images: [
+      {
+        url: `${siteUrl}/gambar/Gedung Tampak Depan 2.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Koperasi Jasa Sukses Mina Bahari',
+      },
+    ],
+  },
 }
 
 export default function KontakPage() {

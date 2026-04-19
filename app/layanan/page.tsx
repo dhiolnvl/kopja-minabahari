@@ -13,6 +13,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/layanan`,
   },
+  openGraph: {
+    title: 'Layanan Kami - Koperasi Jasa Sukses Mina Bahari',
+    description:
+      'Layanan lengkap cold storage, pembekuan ikan, dan sewa mobil thermoking untuk kebutuhan penyimpanan dan distribusi produk perikanan Anda di Pekalongan.',
+    type: 'website',
+    url: `${siteUrl}/layanan`,
+    images: [
+      {
+        url: `${siteUrl}/gambar/Ruang Proses Gudang 100ton.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Layanan Koperasi Jasa Sukses Mina Bahari',
+      },
+    ],
+  },
 }
 
 export default async function LayananPage() {

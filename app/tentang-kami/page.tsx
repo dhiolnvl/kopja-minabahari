@@ -11,6 +11,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/tentang-kami`,
   },
+  openGraph: {
+    title: 'Tentang Kami - Koperasi Jasa Sukses Mina Bahari',
+    description:
+      'Koperasi Jasa Sukses Mina Bahari adalah koperasi perikanan terpercaya di Kota Pekalongan yang telah berpengalaman lebih dari 10 tahun dalam bidang cold storage dan distribusi perikanan.',
+    type: 'website',
+    url: `${siteUrl}/tentang-kami`,
+    images: [
+      {
+        url: `${siteUrl}/gambar/Gedung Tampa Depan.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Gedung Koperasi Jasa Sukses Mina Bahari',
+      },
+    ],
+  },
 }
 
 export default function TentangKami() {

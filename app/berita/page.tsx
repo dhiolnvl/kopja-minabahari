@@ -14,6 +14,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteUrl}/berita`,
   },
+  openGraph: {
+    title: 'Berita & Kegiatan',
+    description:
+      'Informasi terkini seputar kegiatan, pencapaian, dan berita terbaru dari Koperasi Jasa Sukses Mina Bahari di Kota Pekalongan.',
+    type: 'website',
+    url: `${siteUrl}/berita`,
+    images: [
+      {
+        url: `${siteUrl}/gambar/Gedung Tampak Depan 2.jpg`,
+        width: 1200,
+        height: 630,
+        alt: 'Koperasi Jasa Sukses Mina Bahari - Berita & Kegiatan',
+      },
+    ],
+  },
 }
 
 export default async function BeritaPage() {

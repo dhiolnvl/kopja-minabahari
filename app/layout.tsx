@@ -22,8 +22,15 @@ export const metadata: Metadata = {
     template: "%s | Koperasi Jasa Sukses Mina Bahari"
   },
   description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan. Membangun ekonomi kerakyatan di masyarakat pesisir pantai dengan solusi penyimpanan dan distribusi produk perikanan berteknologi modern.",
-  keywords: ["cold storage pekalongan", "pembekuan ikan pekalongan", "sewa thermoking pekalongan", "koperasi perikanan pekalongan", "cold storage jawa tengah", "koperasi jasa sukses mina bahari"],
+  keywords: ["cold storage pekalongan", "pembekuan ikan pekalongan", "sewa thermoking pekalongan", "koperasi perikanan pekalongan", "cold storage jawa tengah", "koperasi jasa sukses mina bahari", "penyimpanan ikan beku", "cold storage murah"],
   authors: [{ name: "Koperasi Jasa Sukses Mina Bahari" }],
+  creator: "Koperasi Jasa Sukses Mina Bahari",
+  publisher: "Koperasi Jasa Sukses Mina Bahari",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
+  },
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -31,11 +38,20 @@ export const metadata: Metadata = {
     siteName: "Koperasi Jasa Sukses Mina Bahari",
     title: "Koperasi Jasa Sukses Mina Bahari - Cold Storage Kota Pekalongan",
     description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan.",
+    images: [
+      {
+        url: `${siteUrl}/gambar/Gedung Tampak Depan 2.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Koperasi Jasa Sukses Mina Bahari - Gedung Cold Storage Pekalongan",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Koperasi Jasa Sukses Mina Bahari - Cold Storage Kota Pekalongan",
     description: "Layanan cold storage, pembekuan ikan, dan sewa mobil thermoking terpercaya di Kota Pekalongan.",
+    images: [`${siteUrl}/gambar/Gedung Tampak Depan 2.jpg`],
   },
   robots: {
     index: true,
@@ -47,6 +63,13 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
+  category: 'business',
+  alternates: {
+    canonical: siteUrl,
   },
 };
 
