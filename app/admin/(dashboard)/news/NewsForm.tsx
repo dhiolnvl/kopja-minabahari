@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import type { News } from '@/lib/supabase/types'
+import type { News, Database } from '@/lib/supabase/types'
 import { ArrowLeft, Save } from 'lucide-react'
 import Link from 'next/link'
 
@@ -53,7 +53,7 @@ export default function NewsForm({ news, mode }: NewsFormProps) {
         const { error } = await supabase.from('news').insert({
           ...formData,
           published_at: new Date().toISOString(),
-        })
+        } as Database['public']['Tables']['news']['Insert'])
 
         if (error) {
           alert('Gagal menambah berita: ' + error.message)
@@ -66,7 +66,7 @@ export default function NewsForm({ news, mode }: NewsFormProps) {
           .update({
             ...formData,
             updated_at: new Date().toISOString(),
-          })
+          } as Database['public']['Tables']['news']['Update'])
           .eq('id', news!.id)
 
         if (error) {
