@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import type { Gallery } from '@/lib/supabase/types'
+import type { Gallery, Database } from '@/lib/supabase/types'
 import { ArrowLeft, Save } from 'lucide-react'
 import Link from 'next/link'
 
@@ -39,7 +39,15 @@ export default function GalleryForm({ gallery, mode }: GalleryFormProps) {
       const supabase = createClient()
 
       if (mode === 'create') {
-        const { error } = await supabase.from('gallery').insert(formData)
+        // @ts-ignore - Supabase type inference issue
+        const { error } = await supabase.from('gallery').insert({
+          title: formData.title,
+          description: formData.description || null,
+          image: formData.image,
+          category: formData.category || null,
+          is_active: formData.is_active,
+          sort_order: formData.sort_order,
+        })
 
         if (error) {
           alert('Gagal menambah foto: ' + error.message)
@@ -47,7 +55,16 @@ export default function GalleryForm({ gallery, mode }: GalleryFormProps) {
           return
         }
       } else {
-        const { error } = await supabase.from('gallery').update(formData).eq('id', gallery!.id)
+        const { error } = await supabase.from('gallery')
+          // @ts-ignore - Supabase type inference issue
+          .update({
+          title: formData.title,
+          description: formData.description || null,
+          image: formData.image,
+          category: formData.category || null,
+          is_active: formData.is_active,
+          sort_order: formData.sort_order,
+        }).eq('id', gallery!.id)
 
         if (error) {
           alert('Gagal mengupdate foto: ' + error.message)

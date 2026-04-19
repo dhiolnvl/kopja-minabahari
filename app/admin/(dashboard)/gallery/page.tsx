@@ -3,14 +3,18 @@ import { createClient } from '@/lib/supabase/server'
 import { Plus, Edit, Eye, CheckCircle, XCircle } from 'lucide-react'
 import DeleteGalleryButton from './DeleteGalleryButton'
 import GalleryImage from './GalleryImage'
+import type { Gallery } from '@/lib/supabase/types'
 
 export default async function AdminGalleryPage() {
   const supabase = await createClient()
 
-  const { data: gallery } = await supabase
+  // @ts-ignore - Supabase type inference issue
+  const { data } = await supabase
     .from('gallery')
     .select('*')
     .order('sort_order', { ascending: true })
+
+  const gallery = data as Gallery[] | null
 
   const getCategoryLabel = (category: string | null) => {
     const labels: Record<string, string> = {

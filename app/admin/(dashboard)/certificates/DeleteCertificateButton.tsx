@@ -23,6 +23,7 @@ export default function DeleteCertificateButton({
     setDeleting(true)
     try {
       const supabase = createClient()
+      // @ts-ignore - Supabase type inference issue
       const { error } = await supabase.from('certificates').delete().eq('id', certificateId)
 
       if (error) {

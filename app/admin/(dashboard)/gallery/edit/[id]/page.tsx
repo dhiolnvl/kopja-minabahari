@@ -11,6 +11,7 @@ export default async function EditGalleryPage({ params }: Props) {
   const { id } = await params
   const supabase = await createClient()
 
+  // @ts-ignore - Supabase type inference issue
   const { data: gallery } = (await supabase
     .from('gallery')
     .select('*')

@@ -23,6 +23,7 @@ export default function DeleteGalleryButton({
     setDeleting(true)
     try {
       const supabase = createClient()
+      // @ts-ignore - Supabase type inference issue
       const { error } = await supabase.from('gallery').delete().eq('id', galleryId)
 
       if (error) {

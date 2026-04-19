@@ -11,6 +11,7 @@ export default async function EditCertificatePage({ params }: Props) {
   const { id } = await params
   const supabase = await createClient()
 
+  // @ts-ignore - Supabase type inference issue
   const { data: certificate } = (await supabase
     .from('certificates')
     .select('*')

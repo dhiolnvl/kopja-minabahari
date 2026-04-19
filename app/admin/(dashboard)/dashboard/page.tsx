@@ -16,18 +16,24 @@ export default async function AdminDashboard() {
   ])
 
   // Get recent news
-  const { data: recentNews } = await supabase
+  const { data } = await supabase
     .from('news')
     .select('id, title, published_at, is_published')
     .order('published_at', { ascending: false })
     .limit(5)
 
+  type NewsData = { id: string; title: string; published_at: string; is_published: boolean }
+  const recentNews = data as NewsData[] | null
+
   // Get recent messages
-  const { data: recentMessages } = await supabase
+  const { data: messagesData } = await supabase
     .from('contact_messages')
     .select('id, name, email, message, is_read, created_at')
     .order('created_at', { ascending: false })
     .limit(5)
+
+  type MessageData = { id: string; name: string; email: string; message: string; is_read: boolean; created_at: string }
+  const recentMessages = messagesData as MessageData[] | null
 
   const stats = [
     {

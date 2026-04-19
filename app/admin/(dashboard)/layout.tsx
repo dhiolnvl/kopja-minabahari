@@ -44,12 +44,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         setUserEmail(user.email || '')
 
         // Get admin user info
-        const { data: adminData } = await supabase
+        const { data } = await supabase
           .from('admin_users')
           .select('full_name')
           .eq('id', user.id)
           .single()
 
+        const adminData = data as { full_name: string | null } | null
         setUserName(adminData?.full_name || user.email?.split('@')[0] || 'Admin')
       }
     }

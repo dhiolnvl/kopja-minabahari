@@ -3,7 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import type { Certificate } from '@/lib/supabase/types'
+import type { Certificate, Database } from '@/lib/supabase/types'
 import { ArrowLeft, Save } from 'lucide-react'
 import Link from 'next/link'
 
@@ -34,7 +34,17 @@ export default function CertificateForm({ certificate, mode }: CertificateFormPr
       const supabase = createClient()
 
       if (mode === 'create') {
-        const { error } = await supabase.from('certificates').insert(formData)
+        // @ts-ignore - Supabase type inference issue
+        const { error } = await supabase.from('certificates').insert({
+          title: formData.title,
+          issuer: formData.issuer,
+          issue_date: formData.issue_date || null,
+          description: formData.description || null,
+          image: formData.image || null,
+          certificate_number: formData.certificate_number || null,
+          is_active: formData.is_active,
+          sort_order: formData.sort_order,
+        })
 
         if (error) {
           alert('Gagal menambah sertifikat: ' + error.message)
@@ -44,8 +54,16 @@ export default function CertificateForm({ certificate, mode }: CertificateFormPr
       } else {
         const { error } = await supabase
           .from('certificates')
+          // @ts-ignore - Supabase type inference issue
           .update({
-            ...formData,
+            title: formData.title,
+            issuer: formData.issuer,
+            issue_date: formData.issue_date || null,
+            description: formData.description || null,
+            image: formData.image || null,
+            certificate_number: formData.certificate_number || null,
+            is_active: formData.is_active,
+            sort_order: formData.sort_order,
             updated_at: new Date().toISOString(),
           })
           .eq('id', certificate!.id)

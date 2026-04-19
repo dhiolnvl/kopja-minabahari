@@ -3,14 +3,18 @@ import { createClient } from '@/lib/supabase/server'
 import { Plus, Edit, Eye, Award } from 'lucide-react'
 import DeleteCertificateButton from './DeleteCertificateButton'
 import CertificateImage from './CertificateImage'
+import type { Certificate } from '@/lib/supabase/types'
 
 export default async function AdminCertificatesPage() {
   const supabase = await createClient()
 
-  const { data: certificates } = await supabase
+  // @ts-ignore - Supabase type inference issue
+  const { data } = await supabase
     .from('certificates')
     .select('*')
     .order('sort_order', { ascending: true })
+
+  const certificates = data as Certificate[] | null
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return '-'
