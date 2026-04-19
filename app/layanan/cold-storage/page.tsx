@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { Check, Phone } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd'
 import type { Service } from '@/lib/supabase/types'
 
@@ -117,18 +118,24 @@ export default async function ColdStoragePage() {
                   Fasilitas Cold Storage
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-xl overflow-hidden shadow-md">
-                    <img
+                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
+                    <Image
                       src="/gambar/Ruang Proses Gudang 100ton.jpg"
                       alt="Ruang Proses Gudang 100 Ton"
-                      className="w-full h-64 object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
                     />
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-md">
-                    <img
+                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
+                    <Image
                       src="/gambar/Ruang Proses Gudang 30 Ton.jpg"
                       alt="Ruang Proses Gudang 30 Ton"
-                      className="w-full h-64 object-cover"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
                     />
                   </div>
                 </div>

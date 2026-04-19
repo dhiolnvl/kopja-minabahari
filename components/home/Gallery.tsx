@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 
 const images = [
@@ -68,13 +69,17 @@ export default function Gallery() {
               className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-shadow"
               onClick={() => setSelectedImage(image.src)}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                loading="lazy"
+                quality={75}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white z-10">
                   <p className="font-semibold">{image.title}</p>
                   <p className="text-sm text-gray-300">{image.category}</p>
                 </div>
@@ -92,16 +97,21 @@ export default function Gallery() {
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+            aria-label="Close lightbox"
           >
             <X size={32} />
           </button>
-          <img
-            src={selectedImage}
-            alt="Full size"
-            className="max-w-full max-h-full object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="relative w-full h-full max-w-6xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Full size"
+              fill
+              className="object-contain"
+              sizes="90vw"
+              quality={90}
+            />
+          </div>
         </div>
       )}
     </section>

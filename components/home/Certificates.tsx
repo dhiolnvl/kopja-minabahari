@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Award, X } from 'lucide-react'
 
 const certificates = [
@@ -56,11 +57,15 @@ export default function Certificates() {
               className="bg-gradient-to-br from-primary/5 to-ocean/5 rounded-xl p-4 hover:shadow-lg transition-shadow cursor-pointer group"
               onClick={() => setSelectedImage(cert.image)}
             >
-              <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden mb-3 shadow-sm">
-                <img
+              <div className="aspect-[3/4] bg-white rounded-lg overflow-hidden mb-3 shadow-sm relative">
+                <Image
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  className="object-contain group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading="lazy"
+                  quality={80}
                 />
               </div>
               <h3 className="text-sm font-semibold text-gray-900 text-center">
@@ -78,17 +83,22 @@ export default function Certificates() {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
             onClick={() => setSelectedImage(null)}
+            aria-label="Close"
           >
             <X size={32} />
           </button>
-          <img
-            src={selectedImage}
-            alt="Certificate"
-            className="max-w-full max-h-[90vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="relative w-full h-full max-w-4xl max-h-[90vh]" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Certificate"
+              fill
+              className="object-contain"
+              sizes="90vw"
+              quality={95}
+            />
+          </div>
         </div>
       )}
     </section>

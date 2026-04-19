@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const footerLinks = {
@@ -25,11 +26,15 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img
-                src="/gambar/logo.jpeg"
-                alt="Logo Koperasi Sukses Mina Bahari"
-                className="h-12 w-auto object-contain bg-white rounded-lg p-1"
-              />
+              <div className="relative h-12 w-12 bg-white rounded-lg p-1">
+                <Image
+                  src="/gambar/logo.jpeg"
+                  alt="Logo Koperasi Sukses Mina Bahari"
+                  fill
+                  className="object-contain"
+                  sizes="48px"
+                />
+              </div>
             </div>
             <h3 className="text-xl font-bold mb-4">
               Koperasi Jasa Sukses Mina Bahari

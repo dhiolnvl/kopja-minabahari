@@ -6,11 +6,15 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: false,
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.com'
@@ -30,6 +34,15 @@ export const metadata: Metadata = {
     telephone: true,
     email: true,
     address: true,
+  },
+  icons: {
+    icon: [
+      { url: '/gambar/logo.jpeg', sizes: 'any', type: 'image/jpeg' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/gambar/logo.jpeg', sizes: '180x180', type: 'image/jpeg' },
+    ],
   },
   openGraph: {
     type: "website",
@@ -83,6 +96,10 @@ export default function RootLayout({
       lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="min-h-full flex flex-col">
         <LayoutWrapper>{children}</LayoutWrapper>
       </body>

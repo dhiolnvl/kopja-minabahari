@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Target, Eye, Award, Users } from 'lucide-react'
 import { BreadcrumbJsonLd } from '@/components/seo/JsonLd'
 
@@ -82,11 +83,14 @@ export default function TentangKami() {
                 </p>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img
+            <div className="rounded-2xl overflow-hidden shadow-xl relative h-96">
+              <Image
                 src="/gambar/Gedung Tampa Depan.jpg"
                 alt="Gedung Koperasi Sukses Mina Bahari"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
           </div>

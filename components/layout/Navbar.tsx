@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -20,11 +21,16 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <img
-              src="/gambar/logo.jpeg"
-              alt="Logo Koperasi Sukses Mina Bahari"
-              className="h-12 w-auto object-contain"
-            />
+            <div className="relative h-12 w-12">
+              <Image
+                src="/gambar/logo.jpeg"
+                alt="Logo Koperasi Sukses Mina Bahari"
+                fill
+                className="object-contain"
+                sizes="48px"
+                priority
+              />
+            </div>
             <div className="hidden sm:block">
               <div className="text-primary font-bold text-base leading-tight">
                 Koperasi Jasa Sukses Mina Bahari

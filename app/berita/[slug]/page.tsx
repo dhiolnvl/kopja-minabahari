@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, ArrowLeft, User } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import type { News } from '@/lib/supabase/types'
@@ -92,10 +93,13 @@ export default async function BeritaDetailPage({ params }: Props) {
       <section className="relative bg-gradient-to-br from-primary to-ocean">
         {news.image && (
           <div className="absolute inset-0 opacity-20">
-            <img
+            <Image
               src={news.image}
               alt={news.title}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
             />
           </div>
         )}
@@ -127,11 +131,14 @@ export default async function BeritaDetailPage({ params }: Props) {
       <article className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {news.image && (
-            <div className="mb-10 rounded-xl overflow-hidden shadow-lg">
-              <img
+            <div className="mb-10 rounded-xl overflow-hidden shadow-lg relative aspect-video">
+              <Image
                 src={news.image}
                 alt={news.title}
-                className="w-full h-auto"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 896px"
+                loading="lazy"
               />
             </div>
           )}

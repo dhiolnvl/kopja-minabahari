@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, ArrowRight } from 'lucide-react'
 import { createClient } from '@/lib/supabase/server'
 import type { News } from '@/lib/supabase/types'
@@ -90,11 +91,14 @@ export default async function BeritaPage() {
                   className="bg-gradient-to-br from-primary/5 to-ocean/5 rounded-xl overflow-hidden hover:shadow-lg transition-shadow group"
                 >
                   {item.image && (
-                    <div className="aspect-video overflow-hidden">
-                      <img
+                    <div className="aspect-video overflow-hidden relative">
+                      <Image
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        loading="lazy"
                       />
                     </div>
                   )}

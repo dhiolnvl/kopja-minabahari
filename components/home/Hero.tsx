@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Phone, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const slides = [
@@ -61,18 +62,23 @@ export default function Hero() {
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
+            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
           {/* Background Image */}
           <div className="absolute inset-0">
-            <img
+            <Image
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority={index === 0}
+              loading={index === 0 ? undefined : 'lazy'}
+              quality={85}
             />
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40 z-10"></div>
           </div>
         </div>
       ))}

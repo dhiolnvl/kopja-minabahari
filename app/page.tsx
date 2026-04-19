@@ -1,12 +1,25 @@
+import dynamic from 'next/dynamic'
 import Hero from '@/components/home/Hero'
 import Services from '@/components/home/Services'
-import WhyUs from '@/components/home/WhyUs'
-import Certificates from '@/components/home/Certificates'
-import Gallery from '@/components/home/Gallery'
-import News from '@/components/home/News'
-import ContactCTA from '@/components/home/ContactCTA'
 import { LocalBusinessJsonLd, OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 import type { Metadata } from 'next'
+
+// Dynamic imports untuk components yang tidak critical (below the fold)
+const WhyUs = dynamic(() => import('@/components/home/WhyUs'), {
+  loading: () => <div className="py-20 bg-light" />,
+})
+const Certificates = dynamic(() => import('@/components/home/Certificates'), {
+  loading: () => <div className="py-20 bg-white" />,
+})
+const Gallery = dynamic(() => import('@/components/home/Gallery'), {
+  loading: () => <div className="py-20 bg-light" />,
+})
+const News = dynamic(() => import('@/components/home/News'), {
+  loading: () => <div className="py-20 bg-white" />,
+})
+const ContactCTA = dynamic(() => import('@/components/home/ContactCTA'), {
+  loading: () => <div className="py-20 bg-primary" />,
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://koperasiminabahari.com'
 
