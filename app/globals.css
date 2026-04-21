@@ -42,3 +42,17 @@ body {
     text-wrap: balance;
   }
 }
+
+/* ── Form elements: maintain light styling since containers are static bg-white ── */
+input,
+textarea,
+select {
+  color: #111827;
+  background-color: #ffffff;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}

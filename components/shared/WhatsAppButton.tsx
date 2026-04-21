@@ -1,7 +1,7 @@
 'use client'
 
 export default function WhatsAppButton() {
-  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '6281234567890'
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '628156567587'
   const message = encodeURIComponent(
     'Halo, saya tertarik dengan layanan Koperasi Sukses Mina Bahari.'
   )

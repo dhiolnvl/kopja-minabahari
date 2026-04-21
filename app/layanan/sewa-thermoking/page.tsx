@@ -177,7 +177,7 @@ export default async function SewaThermoKingPage() {
                   </Link>
 
                   <a
-                    href="tel:+6281234567890"
+                    href="tel:+628156567587"
                     className="flex items-center justify-center w-full bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-lg font-semibold transition-colors"
                   >
                     <Phone size={20} className="mr-2" />

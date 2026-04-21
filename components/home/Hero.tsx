@@ -107,7 +107,7 @@ export default function Hero() {
               </div>
             ))}
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pointer-events-auto relative z-20">
               <Link
                 href="/kontak"
                 className="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors group"

@@ -151,7 +151,7 @@ export default function KontakPage() {
                   cepat.
                 </p>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/628156567587"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
@@ -188,14 +188,17 @@ export default function KontakPage() {
             Lokasi Kami
           </h2>
           <div className="bg-white rounded-xl p-4 shadow-sm">
-            <div className="aspect-video bg-gradient-to-br from-primary/10 to-ocean/10 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-primary/30 mx-auto mb-4" />
-                <p className="text-gray-600 mb-2">Pekalongan, Jawa Tengah</p>
-                <p className="text-sm text-gray-500">
-                  (Google Maps iframe akan ditambahkan di sini)
-                </p>
-              </div>
+            <div className="w-full overflow-hidden rounded-lg" style={{ height: '450px' }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.256033199203!2d109.68793287555779!3d-6.859887393138602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7025ad5e4c3253%3A0xa5bf3cc94766c805!2sKoperasi%20Jasa%20Sukses%20Mina%20Bahari!5e0!3m2!1sid!2sid!4v1776760097720!5m2!1sid!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Lokasi Koperasi Jasa Sukses Mina Bahari"
+              />
             </div>
           </div>
         </div>
