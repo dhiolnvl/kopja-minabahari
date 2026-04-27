@@ -152,9 +152,9 @@ export default async function SewaThermoKingPage() {
                   dalam kondisi segar.
                 </p>
                 <p className="text-gray-600">
-                  Dengan sopir berpengalaman dan sistem GPS tracking real-time,
-                  Anda dapat memantau pengiriman produk Anda kapan saja. Tersedia
-                  pilihan sewa harian atau bulanan sesuai kebutuhan.
+                  Mobil thermo kami berkapasitas 6-7 ton dengan tarif sewa
+                  sesuai jarak tempuh, cocok untuk berbagai kebutuhan distribusi
+                  produk perikanan Anda.
                 </p>
               </div>
             </div>

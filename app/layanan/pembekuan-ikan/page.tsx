@@ -130,7 +130,7 @@ export default async function PembekuanIkanPage() {
                   </div>
                   <div className="rounded-xl overflow-hidden shadow-md relative h-64">
                     <Image
-                      src="/gambar/Sortir.jpg"
+                      src="/gambar/Sortir2.jpg"
                       alt="Sortir Ikan"
                       fill
                       className="object-cover"
@@ -165,15 +165,13 @@ export default async function PembekuanIkanPage() {
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   Mengapa Memilih Layanan Pembekuan Kami?
                 </h3>
-                <p className="text-gray-600 mb-4">
-                  Teknologi blast freezing kami memastikan proses pembekuan yang
-                  cepat dan merata, menjaga struktur sel ikan tetap utuh sehingga
-                  kualitas, tekstur, dan nilai gizi ikan tetap terjaga.
-                </p>
                 <p className="text-gray-600">
-                  Dengan standar ekspor internasional dan sertifikasi mutu, produk
-                  ikan beku Anda siap untuk pasar domestik maupun ekspor dengan
-                  kualitas terbaik.
+                  Kami bukan sekadar tempat penyimpanan, tapi mitra bisnis yang
+                  menjamin keamanan produk Anda secara legal. Dengan kepemilikan
+                  NIB (Nomor Induk Berusaha) dan SKP (Sertifikat Kelayakan
+                  Pengolahan), kami menjamin standar operasional yang telah
+                  tersertifikasi oleh negara dan memenuhi regulasi keamanan
+                  pangan.
                 </p>
               </div>
             </div>

@@ -151,9 +151,9 @@ export default async function ColdStoragePage() {
                   memastikan produk perikanan Anda tetap segar dan berkualitas.
                 </p>
                 <p className="text-gray-600">
-                  Dengan kapasitas penyimpanan hingga 500 ton dan sistem keamanan
-                  24/7, kami menjamin produk Anda tersimpan dengan aman dan dapat
-                  diakses kapan saja sesuai kebutuhan.
+                  Dengan 2 unit cold storage berkapasitas 100 ton dan 30 ton
+                  serta sistem keamanan 24/7, kami menjamin produk Anda tersimpan
+                  dengan aman dan dapat diakses kapan saja sesuai kebutuhan.
                 </p>
               </div>
             </div>
