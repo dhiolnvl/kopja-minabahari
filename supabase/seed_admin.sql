@@ -1,0 +1,15 @@
+-- Seed admin user
+-- IMPORTANT: Setelah menjalankan migration, Anda perlu:
+-- 1. Buat user di Supabase Auth Dashboard atau via signup
+-- 2. Copy UUID user tersebut
+-- 3. Insert ke admin_users table dengan command:
+--
+-- INSERT INTO admin_users (id, email, full_name, role) VALUES
+-- ('USER_UUID_HERE', 'admin@koperasiminabahari.com', 'Admin Koperasi', 'super_admin');
+--
+-- Atau bisa langsung lewat Supabase Dashboard > Authentication > Users
+-- Kemudian tambahkan ke admin_users table
+
+-- Example (ganti dengan UUID yang sebenarnya):
+-- INSERT INTO admin_users (id, email, full_name, role) VALUES
+-- ('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 'admin@koperasiminabahari.com', 'Admin Koperasi', 'super_admin');

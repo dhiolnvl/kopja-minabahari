@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Hub - Koperasi Jasa SMB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+        }
+
+        .btn-success {
+            background: #48bb78;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .quick-actions {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .quick-actions h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .action-btn {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .action-icon {
+            font-size: 32px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Documentation Hub</h1>
+            <p>Koperasi Jasa Sukses Mina Bahari</p>
+        </div>
+
+        <div class="grid">
+            <!-- QA Testing -->
+            <div class="card" onclick="openDoc('QA_TESTING.md')">
+                <div class="card-icon">🧪</div>
+                <h2>QA Testing Documentation</h2>
+                <p>Comprehensive testing guide dengan 37 detailed test cases untuk admin panel dan public website.</p>
+                <div class="card-meta">
+                    <span>37 Test Cases</span>
+                    <button class="btn">View</button>
+                </div>
+            </div>
+
+            <!-- Quick Checklist -->
+            <div class="card" onclick="openDoc('QUICK_TEST_CHECKLIST.md')">
+                <div class="card-icon">✅</div>
+                <h2>Quick Test Checklist</h2>
+                <p>Pre-deployment checklist dan smoke testing untuk rapid testing dalam 5-10 menit.</p>
+                <div class="card-meta">
+                    <span>5-10 minutes</span>
+                    <button class="btn">View</button>
+                </div>
+            </div>
+
+            <!-- Admin Guide -->
+            <div class="card" onclick="openDoc('ADMIN_USER_GUIDE.md')">
+                <div class="card-icon">👨‍💼</div>
+                <h2>Admin User Guide</h2>
+                <p>Panduan lengkap penggunaan admin panel untuk non-technical users dengan screenshots dan tips.</p>
+                <div class="card-meta">
+                    <span>User Manual</span>
+                    <button class="btn">View</button>
+                </div>
+            </div>
+
+            <!-- Setup Guide -->
+            <div class="card" onclick="openDoc('ADMIN_SETUP.md')">
+                <div class="card-icon">⚙️</div>
+                <h2>Admin Setup Guide</h2>
+                <p>Installation dan configuration guide untuk setup admin panel dan database migrations.</p>
+                <div class="card-meta">
+                    <span>Technical</span>
+                    <button class="btn">View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>🚀 Quick Actions</h2>
+            <p style="color: #666; margin-bottom: 20px;">Convert dokumentasi ke PDF format</p>
+
+            <div class="actions-grid">
+                <a href="convert-to-pdf.html" class="action-btn">
+                    <span class="action-icon">🖨️</span>
+                    <span>Convert to PDF</span>
+                </a>
+
+                <a href="QUICK_START_PDF.md" class="action-btn" onclick="return confirmOpen(event, this.href)">
+                    <span class="action-icon">📖</span>
+                    <span>PDF Guide</span>
+                </a>
+
+                <a href="README.md" class="action-btn" onclick="return confirmOpen(event, this.href)">
+                    <span class="action-icon">ℹ️</span>
+                    <span>Documentation</span>
+                </a>
+
+                <a href="javascript:void(0)" onclick="runGenerateScript()" class="action-btn">
+                    <span class="action-icon">⚡</span>
+                    <span>Auto Generate</span>
+                </a>
+            </div>
+
+            <p style="margin-top: 30px; color: #999; font-size: 14px;">
+                📁 PDF output: <code style="background: #f5f5f5; padding: 4px 8px; border-radius: 4px;">docs/pdf/</code>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Koperasi Jasa Sukses Mina Bahari</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 14px;">
+                Documentation v1.0 | Last Updated: April 2025
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openDoc(filename) {
+            // Try to open in default markdown viewer
+            window.location.href = '../' + filename;
+        }
+
+        function confirmOpen(event, href) {
+            event.preventDefault();
+            if (confirm('Open ' + href + '?\n\nNote: Browser may not render markdown files directly. Consider using a markdown viewer or code editor.')) {
+                window.open(href, '_blank');
+            }
+            return false;
+        }
+
+        function runGenerateScript() {
+            alert('Auto Generate All PDFs\n\n' +
+                  'Untuk menjalankan auto-generate:\n\n' +
+                  '1. Buka Terminal/Command Prompt\n' +
+                  '2. Navigate ke folder docs/\n' +
+                  '3. Run: ./generate-pdf.sh\n\n' +
+                  'Requirements:\n' +
+                  '- pandoc installed\n' +
+                  '- wkhtmltopdf installed (optional)\n\n' +
+                  'Install: brew install pandoc\n\n' +
+                  'Atau gunakan "Convert to PDF" untuk konversi manual.');
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'p':
+                        e.preventDefault();
+                        window.location.href = 'convert-to-pdf.html';
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
