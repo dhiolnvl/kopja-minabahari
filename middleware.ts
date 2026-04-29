@@ -45,7 +45,14 @@ export async function middleware(request: NextRequest) {
   if (!user) {
     const redirectUrl = request.nextUrl.clone()
     redirectUrl.pathname = '/admin/login'
-    return NextResponse.redirect(redirectUrl)
+    const redirectResponse = NextResponse.redirect(redirectUrl)
+    
+    // Ensure cookies updated by supabase (like cleared invalid tokens) are passed to the redirect
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie.name, cookie.value)
+    })
+    
+    return redirectResponse
   }
 
   // Check if user is admin
@@ -60,7 +67,14 @@ export async function middleware(request: NextRequest) {
     await supabase.auth.signOut()
     const redirectUrl = request.nextUrl.clone()
     redirectUrl.pathname = '/admin/login'
-    return NextResponse.redirect(redirectUrl)
+    const redirectResponse = NextResponse.redirect(redirectUrl)
+    
+    // Copy cookies to redirect response
+    supabaseResponse.cookies.getAll().forEach((cookie) => {
+      redirectResponse.cookies.set(cookie.name, cookie.value)
+    })
+    
+    return redirectResponse
   }
 
   return supabaseResponse

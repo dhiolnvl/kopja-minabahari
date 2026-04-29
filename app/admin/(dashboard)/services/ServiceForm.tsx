@@ -58,6 +58,12 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
     }
   }
 
+  const updateFeature = (index: number, value: string) => {
+    const newFeatures = [...features]
+    newFeatures[index] = value
+    setFeatures(newFeatures)
+  }
+
   const removeFeature = (index: number) => {
     setFeatures(features.filter((_, i) => i !== index))
   }
@@ -276,8 +282,8 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
                 <input
                   type="text"
                   value={feature}
-                  readOnly
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg bg-gray-50"
+                  onChange={(e) => updateFeature(index, e.target.value)}
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
                 />
                 <button
                   type="button"
