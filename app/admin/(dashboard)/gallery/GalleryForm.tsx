@@ -149,7 +149,11 @@ export default function GalleryForm({ gallery, mode }: GalleryFormProps) {
           </label>
           <input
             id="image"
+<<<<<<< HEAD
             type="text"
+=======
+            type="url"
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
             required
             value={formData.image}
             onChange={(e) => setFormData({ ...formData, image: e.target.value })}

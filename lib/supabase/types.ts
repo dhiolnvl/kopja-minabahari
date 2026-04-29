@@ -48,8 +48,11 @@ export interface Database {
           title: string
           description: string | null
           icon: string | null
+<<<<<<< HEAD
           image: string | null
           image2: string | null
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
           features: Json | null
           price_info: string | null
           is_active: boolean
@@ -61,8 +64,11 @@ export interface Database {
           title: string
           description?: string | null
           icon?: string | null
+<<<<<<< HEAD
           image?: string | null
           image2?: string | null
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
           features?: Json | null
           price_info?: string | null
           is_active?: boolean
@@ -74,8 +80,11 @@ export interface Database {
           title?: string
           description?: string | null
           icon?: string | null
+<<<<<<< HEAD
           image?: string | null
           image2?: string | null
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
           features?: Json | null
           price_info?: string | null
           is_active?: boolean

@@ -203,7 +203,11 @@ export default function NewsForm({ news, mode }: NewsFormProps) {
           </label>
           <input
             id="image"
+<<<<<<< HEAD
             type="text"
+=======
+            type="url"
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
             value={formData.image || ''}
             onChange={(e) => setFormData({ ...formData, image: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"

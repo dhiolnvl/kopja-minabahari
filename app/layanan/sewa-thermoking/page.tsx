@@ -117,6 +117,7 @@ export default async function SewaThermoKingPage() {
                 <h3 className="text-2xl font-bold text-primary mb-6">
                   Peralatan & Fasilitas
                 </h3>
+<<<<<<< HEAD
                 {service.image || service.image2 ? (
                   <div className={`grid gap-4 ${service.image && service.image2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                     {service.image && (
@@ -168,6 +169,30 @@ export default async function SewaThermoKingPage() {
                     </div>
                   </div>
                 )}
+=======
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
+                    <Image
+                      src="/gambar/Peralatan Proses.jpg"
+                      alt="Peralatan Proses"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
+                    <Image
+                      src="/gambar/penyusunan di troli.jpg"
+                      alt="Penyusunan di Troli"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
               </div>
 
               <div className="bg-light rounded-xl p-8">
@@ -181,9 +206,15 @@ export default async function SewaThermoKingPage() {
                   dalam kondisi segar.
                 </p>
                 <p className="text-gray-600">
+<<<<<<< HEAD
                   Dengan sopir berpengalaman dan sistem GPS tracking real-time,
                   Anda dapat memantau pengiriman produk Anda kapan saja. Tersedia
                   pilihan sewa harian atau bulanan sesuai kebutuhan.
+=======
+                  Mobil thermo kami berkapasitas 6-7 ton dengan tarif sewa
+                  sesuai jarak tempuh, cocok untuk berbagai kebutuhan distribusi
+                  produk perikanan Anda.
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
                 </p>
               </div>
             </div>

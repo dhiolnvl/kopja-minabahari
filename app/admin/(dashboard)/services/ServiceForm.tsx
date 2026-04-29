@@ -25,8 +25,11 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
     title: service?.title || '',
     description: service?.description || '',
     icon: service?.icon || '',
+<<<<<<< HEAD
     image: service?.image || '',
     image2: service?.image2 || '',
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
     price_info: service?.price_info || '',
     is_active: service?.is_active ?? true,
   })
@@ -58,12 +61,15 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
     }
   }
 
+<<<<<<< HEAD
   const updateFeature = (index: number, value: string) => {
     const newFeatures = [...features]
     newFeatures[index] = value
     setFeatures(newFeatures)
   }
 
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
   const removeFeature = (index: number) => {
     setFeatures(features.filter((_, i) => i !== index))
   }
@@ -81,8 +87,11 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
           title: formData.title,
           description: formData.description || null,
           icon: formData.icon || null,
+<<<<<<< HEAD
           image: formData.image || null,
           image2: formData.image2 || null,
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
           features: features,
           price_info: formData.price_info || null,
           is_active: formData.is_active,
@@ -101,8 +110,11 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
           title: formData.title,
           description: formData.description || null,
           icon: formData.icon || null,
+<<<<<<< HEAD
           image: formData.image || null,
           image2: formData.image2 || null,
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
           features: features,
           price_info: formData.price_info || null,
           is_active: formData.is_active,
@@ -223,6 +235,7 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
           </p>
         </div>
 
+<<<<<<< HEAD
         {/* Image 1 URL */}
         <div>
           <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-2">
@@ -271,6 +284,8 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
           )}
         </div>
 
+=======
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
         {/* Features */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -282,8 +297,13 @@ export default function ServiceForm({ service, mode }: ServiceFormProps) {
                 <input
                   type="text"
                   value={feature}
+<<<<<<< HEAD
                   onChange={(e) => updateFeature(index, e.target.value)}
                   className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
+=======
+                  readOnly
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg bg-gray-50"
+>>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
                 />
                 <button
                   type="button"
