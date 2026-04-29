@@ -116,11 +116,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <Clock size={16} className="mt-1 flex-shrink-0" />
-<<<<<<< HEAD
                 <span>Senin - Sabtu: 08:00 - 17:00</span>
-=======
-                <span>Senin - Sabtu: 08:00 - 16:00 | Minggu: Tutup</span>
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
               </li>
             </ul>
           </div>

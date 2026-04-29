@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-<<<<<<< HEAD
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,8 +19,6 @@ const nextConfig: NextConfig = {
         hostname: '**',
       },
     ],
-=======
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
   },
   compress: true,
   poweredByHeader: false,

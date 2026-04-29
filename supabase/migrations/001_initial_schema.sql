@@ -70,15 +70,9 @@ create policy "Public can read published news" on news
 
 -- Seed data layanan
 insert into services (slug, title, description, icon, features, price_info) values
-<<<<<<< HEAD
 ('cold-storage', 'Jasa Penitipan Ikan Beku', 'Fasilitas penyimpanan ikan beku berteknologi tinggi dengan suhu terkontrol untuk menjaga kualitas dan kesegaran ikan Anda.', 'Warehouse', '["Kapasitas hingga 500 ton", "Suhu -18°C s/d -25°C", "Monitoring suhu 24 jam", "Akses mudah dan aman", "Laporan inventaris berkala"]', 'Hubungi kami untuk penawaran'),
 ('pembekuan-ikan', 'Jasa Pembekuan Ikan (ABF)', 'Layanan pembekuan ikan cepat dengan metode Air Blast Freezing (ABF) untuk mempertahankan kesegaran, nilai gizi, dan kualitas ekspor ikan Anda.', 'Snowflake', '["Blast freezer berkapasitas besar", "Proses pembekuan <4 jam", "Standar ekspor internasional", "Sertifikasi mutu", "Penanganan oleh tenaga ahli"]', 'Hubungi kami untuk penawaran'),
 ('sewa-thermoking', 'Jasa Sewa Mobil Thermoking', 'Armada kendaraan berpendingin (thermoking) untuk distribusi ikan segar dan beku ke seluruh wilayah Jawa dan sekitarnya.', 'Truck', '["Berbagai kapasitas armada", "Sistem pendingin terpercaya", "Sopir berpengalaman", "GPS tracking real-time", "Sewa harian / bulanan"]', 'Hubungi kami untuk penawaran');
-=======
-('cold-storage', 'Jasa Penitipan Ikan Beku', 'Fasilitas penyimpanan ikan beku berteknologi tinggi dengan suhu terkontrol untuk menjaga kualitas dan kesegaran ikan Anda.', 'Warehouse', '["Kapasitas 2 Unit 100ton dan 30ton", "Suhu -18°C s/d -25°C", "Monitoring suhu 24 jam", "Akses mudah dan aman", "Laporan inventaris berkala"]', 'Hubungi kami untuk penawaran'),
-('pembekuan-ikan', 'Jasa Pembekuan Ikan (ABF)', 'Layanan pembekuan ikan cepat dengan metode Air Blast Freezing (ABF) untuk mempertahankan kesegaran, nilai gizi, dan kualitas ekspor ikan Anda.', 'Snowflake', '["Blast freezer berkapasitas besar", "Proses pembekuan 8 jam", "Sertifikasi mutu", "Penanganan oleh tenaga ahli"]', 'Hubungi kami untuk penawaran'),
-('sewa-thermoking', 'Jasa Sewa Mobil Thermoking', 'Armada kendaraan berpendingin (thermoking) untuk distribusi ikan segar dan beku ke seluruh wilayah Jawa dan sekitarnya.', 'Truck', '["Mobil Thermo dengan kapasitas 6-7ton", "Sistem pendingin terpercaya", "Sopir berpengalaman", "Sewa sesuai jarak tempuh"]', 'Hubungi kami untuk penawaran');
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
 
 -- Seed data statistik
 insert into company_stats (label, value, unit, sort_order) values

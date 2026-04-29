@@ -117,7 +117,6 @@ export default async function ColdStoragePage() {
                 <h3 className="text-2xl font-bold text-primary mb-6">
                   Fasilitas Cold Storage
                 </h3>
-<<<<<<< HEAD
                 {service.image || service.image2 ? (
                   <div className={`grid gap-4 ${service.image && service.image2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                     {service.image && (
@@ -169,30 +168,6 @@ export default async function ColdStoragePage() {
                     </div>
                   </div>
                 )}
-=======
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Ruang Proses Gudang 100ton.jpg"
-                      alt="Ruang Proses Gudang 100 Ton"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Ruang Proses Gudang 30 Ton.jpg"
-                      alt="Ruang Proses Gudang 30 Ton"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
               </div>
 
               <div className="bg-light rounded-xl p-8">
@@ -205,15 +180,9 @@ export default async function ColdStoragePage() {
                   memastikan produk perikanan Anda tetap segar dan berkualitas.
                 </p>
                 <p className="text-gray-600">
-<<<<<<< HEAD
                   Dengan kapasitas penyimpanan hingga 500 ton dan sistem keamanan
                   24/7, kami menjamin produk Anda tersimpan dengan aman dan dapat
                   diakses kapan saja sesuai kebutuhan.
-=======
-                  Dengan 2 unit cold storage berkapasitas 100 ton dan 30 ton
-                  serta sistem keamanan 24/7, kami menjamin produk Anda tersimpan
-                  dengan aman dan dapat diakses kapan saja sesuai kebutuhan.
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
                 </p>
               </div>
             </div>

@@ -117,7 +117,6 @@ export default async function PembekuanIkanPage() {
                 <h3 className="text-2xl font-bold text-primary mb-6">
                   Proses Pembekuan Ikan
                 </h3>
-<<<<<<< HEAD
                 {service.image || service.image2 ? (
                   <div className={`grid gap-4 ${service.image && service.image2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
                     {service.image && (
@@ -189,57 +188,12 @@ export default async function PembekuanIkanPage() {
                     </div>
                   </div>
                 )}
-=======
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Bahan Baku.jpg"
-                      alt="Bahan Baku Ikan Segar"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Sortir2.jpg"
-                      alt="Sortir Ikan"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Penimbangan.jpg"
-                      alt="Penimbangan"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="rounded-xl overflow-hidden shadow-md relative h-64">
-                    <Image
-                      src="/gambar/Pengepakan.jpg"
-                      alt="Pengepakan"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
               </div>
 
               <div className="bg-light rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-primary mb-4">
                   Mengapa Memilih Layanan Pembekuan Kami?
                 </h3>
-<<<<<<< HEAD
                 <p className="text-gray-600 mb-4">
                   Teknologi blast freezing kami memastikan proses pembekuan yang
                   cepat dan merata, menjaga struktur sel ikan tetap utuh sehingga
@@ -249,15 +203,6 @@ export default async function PembekuanIkanPage() {
                   Dengan standar ekspor internasional dan sertifikasi mutu, produk
                   ikan beku Anda siap untuk pasar domestik maupun ekspor dengan
                   kualitas terbaik.
-=======
-                <p className="text-gray-600">
-                  Kami bukan sekadar tempat penyimpanan, tapi mitra bisnis yang
-                  menjamin keamanan produk Anda secara legal. Dengan kepemilikan
-                  NIB (Nomor Induk Berusaha) dan SKP (Sertifikat Kelayakan
-                  Pengolahan), kami menjamin standar operasional yang telah
-                  tersertifikasi oleh negara dan memenuhi regulasi keamanan
-                  pangan.
->>>>>>> 0aa480254ce8f70487edba9b33c619998aaba6d3
                 </p>
               </div>
             </div>
