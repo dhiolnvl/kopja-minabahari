@@ -200,9 +200,9 @@ export default async function PembekuanIkanPage() {
                   kualitas, tekstur, dan nilai gizi ikan tetap terjaga.
                 </p>
                 <p className="text-gray-600">
-                  Dengan standar ekspor internasional dan sertifikasi mutu, produk
-                  ikan beku Anda siap untuk pasar domestik maupun ekspor dengan
-                  kualitas terbaik.
+                  Kami bukan sekadar tempat pembekuan ikan, 
+                  tapi mitra bisnis yang menjamin keamanan produk Anda secara legal. 
+                  Dengan kepemilikan NIB (Nomor Induk Berusaha) dan SKP (Sertifikat Kelayakan Pengolahan), kami menjamin standar operasional yang telah tersertifikasi oleh negara dan memenuhi regulasi keamanan pangan.
                 </p>
               </div>
             </div>

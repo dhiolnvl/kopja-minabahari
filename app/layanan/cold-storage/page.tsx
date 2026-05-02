@@ -175,9 +175,9 @@ export default async function ColdStoragePage() {
                   Mengapa Memilih Cold Storage Kami?
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Fasilitas cold storage kami dilengkapi dengan teknologi
-                  pendinginan terkini dan sistem monitoring suhu otomatis yang
-                  memastikan produk perikanan Anda tetap segar dan berkualitas.
+                  Kami bukan sekadar tempat penyimpanan, 
+                  tapi mitra bisnis yang menjamin keamanan produk Anda secara legal. 
+                  Dengan kepemilikan NIB (Nomor Induk Berusaha) dan SKP (Sertifikat Kelayakan Pengolahan), kami menjamin standar operasional yang telah tersertifikasi oleh negara dan memenuhi regulasi keamanan pangan.
                 </p>
                 <p className="text-gray-600">
                   Dengan kapasitas penyimpanan hingga 500 ton dan sistem keamanan

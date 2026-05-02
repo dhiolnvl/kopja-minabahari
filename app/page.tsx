@@ -67,7 +67,7 @@ export default function Home() {
         telephone="+6281565675877"
         email="kopjasa.suksesminabaharipkl@gmail.com"
         url={siteUrl}
-        openingHours="Mo-Sa 08:00-17:00"
+        openingHours="Mo-Sa 08:00-16:00"
         priceRange="$$"
       />
 
