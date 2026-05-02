@@ -181,9 +181,9 @@ export default async function SewaThermoKingPage() {
                   dalam kondisi segar.
                 </p>
                 <p className="text-gray-600">
-                  Dengan sopir berpengalaman dan sistem GPS tracking real-time,
+                  Dengan sopir berpengalaman,
                   Anda dapat memantau pengiriman produk Anda kapan saja. Tersedia
-                  pilihan sewa harian atau bulanan sesuai kebutuhan.
+                  pilihan sewa sesuai kebutuhan dan harga sewa terjangkau menyesuaikan jarak tempuh.
                 </p>
               </div>
             </div>
