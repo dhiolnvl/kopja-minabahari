@@ -25,7 +25,7 @@ const slides = [
     title: 'Teknologi',
     highlight: 'Modern',
     subtitle: 'Blast Freezing',
-    description: 'Proses pembekuan cepat dengan standar internasional untuk mempertahankan kualitas, tekstur, dan nilai gizi produk perikanan.',
+    description: 'Proses pembekuan cepat dengan standar yang telah ditetapkan untuk mempertahankan kualitas, tekstur, dan nilai gizi produk perikanan.',
   },
   {
     image: '/gambar/Bahan Baku.jpg',

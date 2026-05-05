@@ -135,7 +135,7 @@ export default function KontakPage() {
                     <p className="text-gray-600">
                       Senin - Sabtu: 08:00 - 16:00 WIB
                       <br />
-                      Minggu: Tutup
+                      Minggu / Hari Besar: Tutup
                     </p>
                   </div>
                 </div>
