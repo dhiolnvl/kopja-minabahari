@@ -180,7 +180,7 @@ export default async function ColdStoragePage() {
                   Dengan kepemilikan NIB (Nomor Induk Berusaha) dan SKP (Sertifikat Kelayakan Pengolahan), kami menjamin standar operasional yang telah tersertifikasi oleh negara dan memenuhi regulasi keamanan pangan.
                 </p>
                 <p className="text-gray-600">
-                  Dengan kapasitas penyimpanan hingga 500 ton dan sistem keamanan
+                  Dengan kapasitas penyimpanan 2 unit 100 ton dan 30 ton dan sistem keamanan
                   24/7, kami menjamin produk Anda tersimpan dengan aman dan dapat
                   diakses kapan saja sesuai kebutuhan.
                 </p>

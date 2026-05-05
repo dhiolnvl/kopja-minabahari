@@ -66,7 +66,7 @@ export default function TentangKami() {
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-4">
                 <p>
-                  Koperasi Jasa Sukses Mina Bahari didirikan pada tahun 2014 dengan
+                  Koperasi Jasa Sukses Mina Bahari didirikan pada tahun 2015 dengan
                   visi untuk mendukung industri perikanan di Kota Pekalongan. Berawal
                   dari kebutuhan para nelayan dan pengusaha perikanan akan
                   fasilitas penyimpanan berpendingin yang berkualitas.
