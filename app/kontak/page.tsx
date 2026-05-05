@@ -133,9 +133,9 @@ export default function KontakPage() {
                       Jam Operasional
                     </h3>
                     <p className="text-gray-600">
-                      Senin - Sabtu: 08:00 - 16:00 WIB
+                      Senin - Minggu: 08:00 - 16:00 WIB
                       <br />
-                      Minggu / Hari Besar: Tutup
+                      (Minggu / Hari Besar Kantor Tutup)
                     </p>
                   </div>
                 </div>

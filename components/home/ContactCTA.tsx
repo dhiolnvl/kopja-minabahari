@@ -32,7 +32,10 @@ export default function ContactCTA() {
           </div>
 
           <p className="text-gray-300 text-sm">
-            Jam Operasional: Senin - Sabtu, 08:00 - 16:00 WIB
+            Jam Operasional: Senin - Minggu, 08:00 - 16:00 WIB
+          </p>
+          <p className="text-gray-300 text-sm italic">
+            (Minggu / Hari Besar Kantor Tutup)
           </p>
         </div>
       </div>
