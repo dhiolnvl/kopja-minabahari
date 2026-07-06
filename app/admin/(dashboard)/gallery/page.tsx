@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import { Plus, Edit, Eye, CheckCircle, XCircle } from 'lucide-react'
+import { Plus, Edit, Eye, CheckCircle, XCircle, Play } from 'lucide-react'
 import DeleteGalleryButton from './DeleteGalleryButton'
 import GalleryImage from './GalleryImage'
 import type { Gallery } from '@/lib/supabase/types'
@@ -31,14 +31,14 @@ export default async function AdminGalleryPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Kelola Galeri</h1>
-          <p className="text-gray-600 mt-2">Tambah, edit, atau hapus foto galeri</p>
+          <p className="text-gray-600 mt-2">Tambah, edit, atau hapus foto dan video galeri</p>
         </div>
         <Link
           href="/admin/gallery/new"
           className="inline-flex items-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
         >
           <Plus size={20} className="mr-2" />
-          Tambah Foto
+          Tambah Foto/Video
         </Link>
       </div>
 
@@ -50,7 +50,26 @@ export default async function AdminGalleryPage() {
               className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
             >
               <div className="aspect-video relative overflow-hidden bg-gray-100">
-                <GalleryImage src={item.image} alt={item.title} />
+                {item.image ? (
+                  <GalleryImage src={item.image} alt={item.title} />
+                ) : item.video_url ? (
+                  <video
+                    src={item.video_url}
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                    <span className="text-gray-400 text-xs">Tidak Ada Media</span>
+                  </div>
+                )}
+                {item.video_url && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/35">
+                    <div className="bg-white/80 p-2.5 rounded-full shadow-lg backdrop-blur-xs">
+                      <Play className="w-5 h-5 text-primary fill-primary ml-0.5" />
+                    </div>
+                  </div>
+                )}
                 <div className="absolute top-2 right-2 flex gap-2">
                   {item.is_active ? (
                     <div className="bg-green-500 p-1.5 rounded-full">

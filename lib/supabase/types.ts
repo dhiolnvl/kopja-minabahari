@@ -218,31 +218,34 @@ export interface Database {
           id: string
           title: string
           description: string | null
-          image: string
+          image: string | null
           category: string | null
           is_active: boolean
           sort_order: number
           created_at: string
+          video_url: string | null
         }
         Insert: {
           id?: string
           title: string
           description?: string | null
-          image: string
+          image?: string | null
           category?: string | null
           is_active?: boolean
           sort_order?: number
           created_at?: string
+          video_url?: string | null
         }
         Update: {
           id?: string
           title?: string
           description?: string | null
-          image?: string
+          image?: string | null
           category?: string | null
           is_active?: boolean
           sort_order?: number
           created_at?: string
+          video_url?: string | null
         }
       }
     }
